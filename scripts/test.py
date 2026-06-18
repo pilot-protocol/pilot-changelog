@@ -299,6 +299,47 @@ def test_integration_per_scope_feeds_emitted():
         shutil.rmtree(root)
 
 
+MOTD_ENTRY = textwrap.dedent("""\
+    ---
+    date: 2026-04-25
+    scope: motd
+    visibility: public
+    title: maintenance window 22:00 UTC
+    flagged: false
+    links: []
+    ids: []
+    ---
+
+    Banner active today.
+    """)
+
+
+@case
+def test_integration_motd_isolated_from_changelog():
+    """A motd entry lands in feed-motd.json but NOT in the human changelog
+    feeds (feed.json, windowed, flagged, RSS, site)."""
+    root = make_temp_root()
+    try:
+        (root / "entries" / "2026-04-25-a-public-entry.md").write_text(VALID_PUBLIC)
+        (root / "entries" / "2026-04-25-motd-maint.md").write_text(MOTD_ENTRY)
+        run_script("render.py", root)
+
+        motd = json.loads((root / "feed-motd.json").read_text())
+        assert motd["count"] == 1, motd["count"]
+        assert motd["entries"][0]["title"] == "maintenance window 22:00 UTC"
+
+        # The changelog "all" feed and flagged feed must exclude motd.
+        allf = json.loads((root / "feed.json").read_text())
+        assert all(e["scope"] != "motd" for e in allf["entries"]), "motd leaked into feed.json"
+        assert allf["count"] == 1, allf["count"]  # only the networks entry
+        flagged = json.loads((root / "feed-flagged.json").read_text())
+        assert all(e["scope"] != "motd" for e in flagged["entries"]), "motd leaked into feed-flagged.json"
+        # RSS must not contain the motd title.
+        assert "maintenance window 22:00 UTC" not in (root / "feed.xml").read_text()
+    finally:
+        shutil.rmtree(root)
+
+
 @case
 def test_integration_index_manifest():
     """index.json lists every public feed URL with stable schema."""
@@ -310,8 +351,9 @@ def test_integration_index_manifest():
         assert idx["schema_version"] == 1
         assert idx["latest_entry_date"] == "2026-04-25"
         names = {f["name"] for f in idx["feeds"]}
-        # The 5 windowed/flagged + 6 per-scope feeds.
-        expected_names = {"all", "1d", "7d", "1m", "flagged"} | {f"scope:{s}" for s in ["protocol", "networks", "skills", "infra", "ops", "docs"]}
+        # The 5 windowed/flagged + 6 changelog per-scope feeds + the special
+        # motd feed (consumed by pilot-daemon, isolated from the changelog).
+        expected_names = {"all", "1d", "7d", "1m", "flagged"} | {f"scope:{s}" for s in ["protocol", "networks", "skills", "infra", "ops", "docs", "motd"]}
         assert names == expected_names, names ^ expected_names
         # Every feed entry must have name/window/url/description.
         for f in idx["feeds"]:
