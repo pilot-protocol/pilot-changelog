@@ -68,7 +68,7 @@ Every `feed*.json` (including per-scope and `feed-private.json`) follows:
 |---|---|---|
 | `id` | string | Filename stem; stable per entry. |
 | `date` | string | `YYYY-MM-DD`, UTC. |
-| `scope` | string | One of: `protocol`, `networks`, `skills`, `infra`, `ops`, `docs`. |
+| `scope` | string | One of: `protocol`, `networks`, `skills`, `infra`, `ops`, `docs`. The special `motd` scope is consumed only by `feed-motd.json` — see below. |
 | `visibility` | string | `public` (always for public feeds). `private` only appears in operator-only outputs. |
 | `title` | string | Plain text. |
 | `flagged` | boolean | `true` → also surfaces in `feed-flagged.json` regardless of date window. |
@@ -76,6 +76,30 @@ Every `feed*.json` (including per-scope and `feed-private.json`) follows:
 | `ids` | string[] | Free-form correlation IDs (commits, ticket IDs, etc.). May be empty. |
 | `body` | string | Entry body, raw markdown. May contain headings/lists/code. |
 | `excerpt` | string | First paragraph of body, plain text — convenient for listings. |
+
+## Message of the day (`motd` scope)
+
+The `motd` scope is a special-cased feed for the **message-of-the-day banner**
+that `pilot-daemon` shows ahead of every `pilotctl` command. It rides the same
+entry/render pipeline as the changelog but is **kept out of the human-facing
+feeds** (`feed.json`, the windowed feeds, `feed-flagged.json`, `feed.xml`,
+`feed.md`, and the Pages site) — it is published **only** to
+`feed-motd.json`.
+
+For a `motd` entry the standard fields are re-purposed:
+
+| Field | Meaning for `motd` |
+|---|---|
+| `date` | The **UTC day the banner is active** (not a publish date). The daemon shows the entry whose `date` equals the current UTC day. |
+| `title` | The **banner text**, shown verbatim by `pilotctl`. Keep it short and plain. |
+| `body` / `excerpt` / `links` / `ids` / `flagged` | Ignored by the daemon. |
+
+Conventions: keep **at most one** `motd` entry per `date`. A withdrawn banner
+(no entry for today) self-clears in the daemon within one poll interval.
+Tooling: `scripts/set-motd.sh "text" [YYYY-MM-DD]` and
+`scripts/clear-motd.sh [YYYY-MM-DD|--all]` author/remove a banner and
+re-render. `feed-motd.json` follows the same JSON feed shape as every other
+feed (`window` is `"scope:motd"`).
 
 ## Determinism
 

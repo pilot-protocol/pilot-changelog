@@ -29,7 +29,16 @@ from xml.sax.saxutils import escape as xml_escape
 
 REPO_ROOT = Path(os.environ.get("PILOT_CHANGELOG_ROOT") or Path(__file__).resolve().parent.parent)
 ENTRIES_DIRS = [REPO_ROOT / "entries", REPO_ROOT / "private"]
-ALLOWED_SCOPES = {"protocol", "networks", "skills", "infra", "ops", "docs"}
+# Scopes that make up the human-facing changelog (feed.json, RSS, the site).
+CHANGELOG_SCOPES = {"protocol", "networks", "skills", "infra", "ops", "docs"}
+# "motd" is a special scope: a message-of-the-day banner consumed only by the
+# pilot-daemon via feed-motd.json. For a motd entry the `date` is the UTC day
+# the banner is active (not a publish date), and the `title` is the banner
+# text. motd entries are deliberately kept OUT of the general changelog feeds
+# (feed.json, windowed, flagged, RSS, site) — they ride the same pipeline but
+# are not changelog news. ALLOWED_SCOPES is the frontmatter-validation set.
+MOTD_SCOPE = "motd"
+ALLOWED_SCOPES = CHANGELOG_SCOPES | {MOTD_SCOPE}
 ALLOWED_VISIBILITY = {"public", "private"}
 SCHEMA_VERSION = 1
 
@@ -376,7 +385,7 @@ def write_docs_html(path: Path, entries: list[Entry]) -> None:
     }
     blog_ld_script = f'  <script type="application/ld+json">{json.dumps(blog_ld, ensure_ascii=False)}</script>\n'
 
-    scopes_sorted = sorted(ALLOWED_SCOPES)
+    scopes_sorted = sorted(CHANGELOG_SCOPES)
     filter_buttons = '\n'.join(
         f'      <button class="filter-tab" data-filter="{s}">{s}</button>'
         for s in scopes_sorted
@@ -684,11 +693,17 @@ def write_index(path: Path, *, public_entries: list[Entry]) -> None:
          "description": "Public entries marked flagged (always-surface, regardless of date)."},
     ]
     for scope in sorted(ALLOWED_SCOPES):
+        if scope == MOTD_SCOPE:
+            description = ("Message-of-the-day banners. Each entry's `date` is the "
+                          "UTC day it is active and `title` is the banner text; "
+                          "consumed by pilot-daemon, not part of the changelog.")
+        else:
+            description = f"All public entries scoped to {scope!r}, all-time."
         feeds.append({
             "name": f"scope:{scope}",
             "window": "all",
             "url": f"feed-{scope}.json",
-            "description": f"All public entries scoped to {scope!r}, all-time.",
+            "description": description,
         })
     payload = {
         "schema_version": SCHEMA_VERSION,
@@ -728,44 +743,50 @@ def main() -> int:
     now = datetime.now(timezone.utc)
     all_entries = load_entries()
     public = [e for e in all_entries if e.visibility == "public"]
+    # The human changelog excludes motd banners — those ride the same pipeline
+    # but are served only via feed-motd.json (see the per-scope loop below).
+    changelog = [e for e in public if e.scope != MOTD_SCOPE]
 
-    write_json_feed(REPO_ROOT / "feed.json", entries=public, window="all", include_private=False)
-    write_json_feed(REPO_ROOT / "feed-1d.json", entries=filter_window(public, 1, now), window="1d", include_private=False)
-    write_json_feed(REPO_ROOT / "feed-7d.json", entries=filter_window(public, 7, now), window="7d", include_private=False)
-    write_json_feed(REPO_ROOT / "feed-1m.json", entries=filter_window(public, 30, now), window="1m", include_private=False)
-    write_json_feed(REPO_ROOT / "feed-flagged.json", entries=[e for e in public if e.flagged], window="flagged", include_private=False)
+    write_json_feed(REPO_ROOT / "feed.json", entries=changelog, window="all", include_private=False)
+    write_json_feed(REPO_ROOT / "feed-1d.json", entries=filter_window(changelog, 1, now), window="1d", include_private=False)
+    write_json_feed(REPO_ROOT / "feed-7d.json", entries=filter_window(changelog, 7, now), window="7d", include_private=False)
+    write_json_feed(REPO_ROOT / "feed-1m.json", entries=filter_window(changelog, 30, now), window="1m", include_private=False)
+    write_json_feed(REPO_ROOT / "feed-flagged.json", entries=[e for e in changelog if e.flagged], window="flagged", include_private=False)
 
     # Per-scope feeds — peers can subscribe to just protocol/networks/etc.
-    # Always emit a file per allowed scope, even if empty, so URLs are stable.
+    # Always emit a file per allowed scope (incl. motd), even if empty, so URLs
+    # are stable. The per-scope filter naturally isolates motd into
+    # feed-motd.json — the daemon's message-of-the-day source.
     for scope in sorted(ALLOWED_SCOPES):
         scope_entries = [e for e in public if e.scope == scope]
         write_json_feed(REPO_ROOT / f"feed-{scope}.json", entries=scope_entries, window=f"scope:{scope}", include_private=False)
 
-    write_markdown_feed(REPO_ROOT / "feed.md", public, title="Pilot Protocol Changelog")
+    write_markdown_feed(REPO_ROOT / "feed.md", changelog, title="Pilot Protocol Changelog")
 
     # RSS 2.0 for human / RSS-reader subscription.
-    write_rss_feed(REPO_ROOT / "feed.xml", public, channel_link=PAGES_BASE_URL)
+    write_rss_feed(REPO_ROOT / "feed.xml", changelog, channel_link=PAGES_BASE_URL)
 
     # Manifest — single discovery URL listing every public feed.
-    write_index(REPO_ROOT / "index.json", public_entries=public)
+    write_index(REPO_ROOT / "index.json", public_entries=changelog)
 
     # GitHub Pages landing page (dark theme, web4-styled).
-    write_docs_html(REPO_ROOT / "docs" / "index.html", public)
+    write_docs_html(REPO_ROOT / "docs" / "index.html", changelog)
 
-    # Per-entry pages — each public entry gets a separately indexable URL.
+    # Per-entry pages — each changelog entry gets a separately indexable URL.
+    # motd banners are intentionally not given public pages.
     entries_dir = REPO_ROOT / "docs" / "entries"
     entries_dir.mkdir(parents=True, exist_ok=True)
     # Wipe stale entry HTML so renamed/removed entries don't linger on Pages.
     for stale in entries_dir.glob("*.html"):
         stale.unlink()
-    for e in public:
-        write_entry_html(entries_dir / f"{e.id}.html", e, all_entries=public)
-    print(f"wrote {len(public)} per-entry HTML pages under docs/entries/")
+    for e in changelog:
+        write_entry_html(entries_dir / f"{e.id}.html", e, all_entries=changelog)
+    print(f"wrote {len(changelog)} per-entry HTML pages under docs/entries/")
 
     # SEO surface — robots.txt + sitemap.xml live in docs/ so they're served
     # from the Pages origin at /pilot-changelog/robots.txt and /sitemap.xml.
     write_robots_txt(REPO_ROOT / "docs" / "robots.txt")
-    write_sitemap_xml(REPO_ROOT / "docs" / "sitemap.xml", public)
+    write_sitemap_xml(REPO_ROOT / "docs" / "sitemap.xml", changelog)
 
     # Private mirror outputs — gitignored, operator console only.
     write_json_feed(REPO_ROOT / "feed-private.json", entries=all_entries, window="all", include_private=True)

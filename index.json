@@ -46,6 +46,12 @@
       "description": "All public entries scoped to 'infra', all-time."
     },
     {
+      "name": "scope:motd",
+      "window": "all",
+      "url": "feed-motd.json",
+      "description": "Message-of-the-day banners. Each entry's `date` is the UTC day it is active and `title` is the banner text; consumed by pilot-daemon, not part of the changelog."
+    },
+    {
       "name": "scope:networks",
       "window": "all",
       "url": "feed-networks.json",

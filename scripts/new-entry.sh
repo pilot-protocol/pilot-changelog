@@ -17,7 +17,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-ALLOWED_SCOPES=(protocol networks skills infra ops docs)
+ALLOWED_SCOPES=(protocol networks skills infra ops docs motd)
 
 title=""
 scope=""
