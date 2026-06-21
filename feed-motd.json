@@ -1,8 +1,21 @@
 {
   "schema_version": 1,
-  "latest_entry_date": null,
+  "latest_entry_date": "2026-06-21",
   "window": "scope:motd",
   "include_private": false,
-  "count": 0,
-  "entries": []
+  "count": 1,
+  "entries": [
+    {
+      "id": "2026-06-21-motd-install-sixtyfour-from-the-pilot-app-sto",
+      "date": "2026-06-21",
+      "scope": "motd",
+      "visibility": "public",
+      "title": "Install Sixtyfour from the Pilot app store — it turns a name, email, phone, or LinkedIn URL into a verified, fully-sourced profile, all as clean JSON on your own daemon. Get it with pilotctl appstore install io.pilot.sixtyfour.",
+      "flagged": false,
+      "links": [],
+      "ids": [],
+      "body": "Message-of-the-day banner active on 2026-06-21 (UTC). The title above is shown verbatim by pilotctl.",
+      "excerpt": "Message-of-the-day banner active on 2026-06-21 (UTC). The title above is shown verbatim by pilotctl."
+    }
+  ]
 }
