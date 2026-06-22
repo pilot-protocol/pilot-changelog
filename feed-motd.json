@@ -1,10 +1,22 @@
 {
   "schema_version": 1,
-  "latest_entry_date": "2026-06-22",
+  "latest_entry_date": "2026-06-23",
   "window": "scope:motd",
   "include_private": false,
-  "count": 2,
+  "count": 3,
   "entries": [
+    {
+      "id": "2026-06-23-motd-smol-machines-is-now-on-the-pilot-app-st",
+      "date": "2026-06-23",
+      "scope": "motd",
+      "visibility": "public",
+      "title": "Smol Machines is now on the Pilot app store, free to use — spin up fast, hardware-isolated Linux microVMs on demand to run untrusted or AI-generated code, headless browser automation, GPU tasks, CI jobs, and disposable dev sandboxes. Install with pilotctl appstore install io.pilot.smolmachines.",
+      "flagged": false,
+      "links": [],
+      "ids": [],
+      "body": "Message-of-the-day banner active on 2026-06-23 (UTC). The title above is shown verbatim by pilotctl.",
+      "excerpt": "Message-of-the-day banner active on 2026-06-23 (UTC). The title above is shown verbatim by pilotctl."
+    },
     {
       "id": "2026-06-22-motd-install-sixtyfour-from-the-pilot-app-sto",
       "date": "2026-06-22",
