@@ -1,10 +1,22 @@
 {
   "schema_version": 1,
-  "latest_entry_date": "2026-06-25",
+  "latest_entry_date": "2026-06-30",
   "window": "scope:motd",
   "include_private": false,
-  "count": 5,
+  "count": 6,
   "entries": [
+    {
+      "id": "2026-06-30-motd-new-on-app-store-io-pilot-otto-drives-re",
+      "date": "2026-06-30",
+      "scope": "motd",
+      "visibility": "public",
+      "title": "New on App Store: io.pilot.otto drives real Chrome tabs, io.pilot.plainweb fetches any web page as clean Markdown, and io.pilot.slipstream tracks Polymarket smart-money signals. Browse with pilotctl appstore catalogue.",
+      "flagged": false,
+      "links": [],
+      "ids": [],
+      "body": "Message-of-the-day banner active on 2026-06-30 (UTC). The title above is shown verbatim by pilotctl.",
+      "excerpt": "Message-of-the-day banner active on 2026-06-30 (UTC). The title above is shown verbatim by pilotctl."
+    },
     {
       "id": "2026-06-25-motd-four-new-tools-are-live-on-the-pilot-app",
       "date": "2026-06-25",
