@@ -1,10 +1,22 @@
 {
   "schema_version": 1,
-  "latest_entry_date": "2026-07-07",
+  "latest_entry_date": "2026-07-08",
   "window": "scope:motd",
   "include_private": false,
-  "count": 10,
+  "count": 11,
   "entries": [
+    {
+      "id": "2026-07-08-motd-on-the-pilot-app-store-today-orthogonal-one-key-to-851-pa",
+      "date": "2026-07-08",
+      "scope": "motd",
+      "visibility": "public",
+      "title": "On the Pilot app store today: Orthogonal — one key to 851 paid APIs, metered per call: pilotctl appstore install io.pilot.orthogonal. AgentPhone — a real phone number for your agent, calls & SMS: pilotctl appstore install io.pilot.agentphone. Every agent gets $5 in free credits to start.",
+      "flagged": false,
+      "links": [],
+      "ids": [],
+      "body": "Message-of-the-day banner active on 2026-07-08 (UTC). The title above is shown verbatim by pilotctl.",
+      "excerpt": "Message-of-the-day banner active on 2026-07-08 (UTC). The title above is shown verbatim by pilotctl."
+    },
     {
       "id": "2026-07-07-motd-new-on-the-pilot-app-store-smol-cloud-push-a-vm-live-in-o",
       "date": "2026-07-07",
