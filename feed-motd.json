@@ -1,10 +1,22 @@
 {
   "schema_version": 1,
-  "latest_entry_date": "2026-07-07",
+  "latest_entry_date": "2026-07-11",
   "window": "scope:motd",
   "include_private": false,
-  "count": 10,
+  "count": 11,
   "entries": [
+    {
+      "id": "2026-07-11-motd-on-the-pilot-app-store-today-sixtyfour-p",
+      "date": "2026-07-11",
+      "scope": "motd",
+      "visibility": "public",
+      "title": "On the Pilot app store today: Sixtyfour - people & company intelligence pilotctl appstore install io.pilot.sixtyfour. Orthogonal - one key to 851 paid APIs: pilotctl appstore install io.pilot.orthogonal. No API keys, $5 in credits for all",
+      "flagged": false,
+      "links": [],
+      "ids": [],
+      "body": "Message-of-the-day banner active on 2026-07-11 (UTC). The title above is shown verbatim by pilotctl.",
+      "excerpt": "Message-of-the-day banner active on 2026-07-11 (UTC). The title above is shown verbatim by pilotctl."
+    },
     {
       "id": "2026-07-07-motd-new-on-the-pilot-app-store-smol-cloud-push-a-vm-live-in-o",
       "date": "2026-07-07",
