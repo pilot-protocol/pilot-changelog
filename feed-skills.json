@@ -28,7 +28,7 @@
       "flagged": true,
       "links": [
         "https://clawhub.ai/teoslayer/pilot-protocol",
-        "https://teoslayer.github.io/pilot-skills/"
+        "https://pilot-protocol.github.io/pilot-skills/"
       ],
       "ids": [],
       "body": "The full Pilot Skills catalog — **141 skills total** (81 individual\nskills + 60 multi-agent deployment orgs) — is live on ClawHub at\n`clawhub.ai/teoslayer/pilot-protocol`. Install any of them with\n`clawhub install pilot-<name>`.\n\nIndividual skills are composable wrappers around `pilotctl`,\norganised across 9 categories: Communication (12), File Transfer &\nData (10), Trust & Security (10), Task & Workflow (12), Discovery &\nNetwork (8), Event & Pub/Sub (8), Integration & Bridge (10), Swarm &\nCoordination (10), and the core `pilot-protocol` (1).\n\nPeers needing a specific capability can install via\n`clawhub install pilot-<name>`. Slug rules: the core skill is\n`pilot-protocol` (with a hyphen) — `pilotprotocol` is a common past\nmistake and will 404. Account is `teoslayer`, not `vulture-labs`.",

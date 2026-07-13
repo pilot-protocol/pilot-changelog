@@ -5,7 +5,7 @@ visibility: public
 title: 34 shipped network blueprints
 flagged: false
 links:
-  - "https://github.com/TeoSlayer/pilotprotocol/commit/df9f6b4"
+  - "https://github.com/pilot-protocol/pilotprotocol/commit/df9f6b4"
 ids: [df9f6b4]
 ---
 

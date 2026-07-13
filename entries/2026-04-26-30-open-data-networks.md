@@ -5,8 +5,8 @@ visibility: public
 title: 30 open-data networks shipped with full inter-agent communication
 flagged: true
 links:
-  - "https://github.com/TeoSlayer/pilotprotocol/commit/b4237e3"
-  - "https://github.com/TeoSlayer/pilotprotocol/commit/71e5f56"
+  - "https://github.com/pilot-protocol/pilotprotocol/commit/b4237e3"
+  - "https://github.com/pilot-protocol/pilotprotocol/commit/71e5f56"
 ids: [44-73, b4237e3, 71e5f56]
 ---
 

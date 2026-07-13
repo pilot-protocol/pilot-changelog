@@ -37,7 +37,7 @@
       "title": "v1.9.0-rc1 prerelease tagged",
       "flagged": true,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/releases/tag/v1.9.0-rc1"
+        "https://github.com/pilot-protocol/pilotprotocol/releases/tag/v1.9.0-rc1"
       ],
       "ids": [
         "v1.9.0-rc1"
@@ -53,7 +53,7 @@
       "title": "Strict FIFO task pipeline and propagating trust revocation",
       "flagged": false,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/commit/024693a"
+        "https://github.com/pilot-protocol/pilotprotocol/commit/024693a"
       ],
       "ids": [
         "024693a"
@@ -69,7 +69,7 @@
       "title": "Registry SSRF defense and snapshot validation",
       "flagged": false,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/commit/d4ec11a"
+        "https://github.com/pilot-protocol/pilotprotocol/commit/d4ec11a"
       ],
       "ids": [
         "d4ec11a"

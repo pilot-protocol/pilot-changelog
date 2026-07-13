@@ -63,7 +63,7 @@ jobs:
       - name: Assemble Pages bundle
         # Pages serves from a single origin; bundle the HTML site + every
         # public feed file together so peer consumers can fetch
-        # https://teoslayer.github.io/pilot-changelog/feed.json (etc.)
+        # https://pilot-protocol.github.io/pilot-changelog/feed.json (etc.)
         # without leaving the origin. Same files remain at repo root for
         # raw.githubusercontent.com consumers.
         if: github.ref == 'refs/heads/main'
@@ -75,7 +75,7 @@ jobs:
           cp feed.json feed.md feed.xml index.json _site/
           cp feed-flagged.json feed-1d.json feed-7d.json feed-1m.json _site/
           cp feed-protocol.json feed-networks.json feed-skills.json _site/
-          cp feed-infra.json feed-ops.json feed-docs.json _site/
+          cp feed-infra.json feed-ops.json feed-docs.json feed-motd.json _site/
           ls -la _site/
           ls -la _site/entries/ | head -10
 

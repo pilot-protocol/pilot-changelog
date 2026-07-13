@@ -42,10 +42,10 @@ ALLOWED_SCOPES = CHANGELOG_SCOPES | {MOTD_SCOPE}
 ALLOWED_VISIBILITY = {"public", "private"}
 SCHEMA_VERSION = 1
 
-PAGES_BASE_URL = "https://teoslayer.github.io/pilot-changelog"
+PAGES_BASE_URL = "https://pilot-protocol.github.io/pilot-changelog"
 PAGES_PATH = "/pilot-changelog"  # absolute path prefix for in-site links
 MAIN_SITE_URL = "https://pilotprotocol.network"
-REPO_URL = "https://github.com/TeoSlayer/pilot-changelog"
+REPO_URL = "https://github.com/pilot-protocol/pilot-changelog"
 
 _DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 _MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -707,7 +707,7 @@ def write_index(path: Path, *, public_entries: list[Entry]) -> None:
         })
     payload = {
         "schema_version": SCHEMA_VERSION,
-        "repo": "https://github.com/TeoSlayer/pilot-changelog",
+        "repo": REPO_URL,
         "latest_entry_date": public_entries[0].date if public_entries else None,
         "feeds": feeds,
     }

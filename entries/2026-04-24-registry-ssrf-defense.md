@@ -5,7 +5,7 @@ visibility: public
 title: Registry SSRF defense and snapshot validation
 flagged: false
 links:
-  - "https://github.com/TeoSlayer/pilotprotocol/commit/d4ec11a"
+  - "https://github.com/pilot-protocol/pilotprotocol/commit/d4ec11a"
 ids: [d4ec11a]
 ---
 

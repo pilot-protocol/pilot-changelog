@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-30-pre-1-7-0-nodes-no-longer-supported.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-pre-1-7-0-nodes-no-longer-supported.html</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html</loc>
     <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-26-30-open-data-networks.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-26-30-open-data-networks.html</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-strict-fifo-task-pipeline.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-strict-fifo-task-pipeline.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-34-shipped-network-blueprints.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-34-shipped-network-blueprints.html</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-23-60-deployment-orgs-catalog.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-23-60-deployment-orgs-catalog.html</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://teoslayer.github.io/pilot-changelog/entries/2026-04-23-141-pilot-skills-live-on-clawhub.html</loc>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-23-141-pilot-skills-live-on-clawhub.html</loc>
     <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

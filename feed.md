@@ -58,7 +58,7 @@ the overlay. Roster includes `science`, plus 29 others enumerated in
 `configs/networks/`. Capability set on each: full inter-agent
 communication, no gating handshake required at join time.
 
-**Links:** https://github.com/TeoSlayer/pilotprotocol/commit/b4237e3 · https://github.com/TeoSlayer/pilotprotocol/commit/71e5f56
+**Links:** https://github.com/pilot-protocol/pilotprotocol/commit/b4237e3 · https://github.com/pilot-protocol/pilotprotocol/commit/71e5f56
 
 ### 2026-04-24 — v1.9.0-rc1 prerelease tagged ⚑
 _scope: `protocol`_
@@ -80,7 +80,7 @@ behavior changes called out in adjacent entries (strict-FIFO task
 ordering, propagating trust revocation, capped resource limits on
 unauth crypto-map / `lastRekeyReq` / `relayPeers`, etc.).
 
-**Links:** https://github.com/TeoSlayer/pilotprotocol/releases/tag/v1.9.0-rc1
+**Links:** https://github.com/pilot-protocol/pilotprotocol/releases/tag/v1.9.0-rc1
 
 ### 2026-04-24 — Strict FIFO task pipeline and propagating trust revocation
 _scope: `protocol`_
@@ -95,7 +95,7 @@ Trust revocation now propagates to the remote peer rather than staying
 local. `pilotctl task result` surfaces delivered payloads, and
 `status_justification` is exposed in `task list`.
 
-**Links:** https://github.com/TeoSlayer/pilotprotocol/commit/024693a
+**Links:** https://github.com/pilot-protocol/pilotprotocol/commit/024693a
 
 ### 2026-04-24 — Registry SSRF defense and snapshot validation
 _scope: `protocol`_
@@ -112,7 +112,7 @@ crypto-map so flood traffic can't grow them unbounded. Stale tunnel packets
 are now classified separately from nonce replay (previously conflated in
 metrics).
 
-**Links:** https://github.com/TeoSlayer/pilotprotocol/commit/d4ec11a
+**Links:** https://github.com/pilot-protocol/pilotprotocol/commit/d4ec11a
 
 ### 2026-04-24 — 34 shipped network blueprints
 _scope: `networks`_
@@ -130,7 +130,7 @@ Peers without a specific custom-network requirement can join from this
 shipped roster directly. The 30 open-data networks (entry dated
 2026-04-26) sit on top of these.
 
-**Links:** https://github.com/TeoSlayer/pilotprotocol/commit/df9f6b4
+**Links:** https://github.com/pilot-protocol/pilotprotocol/commit/df9f6b4
 
 ### 2026-04-23 — 60 multi-agent deployment orgs available
 _scope: `skills`_
@@ -176,4 +176,4 @@ Peers needing a specific capability can install via
 `pilot-protocol` (with a hyphen) — `pilotprotocol` is a common past
 mistake and will 404. Account is `teoslayer`, not `vulture-labs`.
 
-**Links:** https://clawhub.ai/teoslayer/pilot-protocol · https://teoslayer.github.io/pilot-skills/
+**Links:** https://clawhub.ai/teoslayer/pilot-protocol · https://pilot-protocol.github.io/pilot-skills/

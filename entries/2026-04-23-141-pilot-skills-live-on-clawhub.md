@@ -6,7 +6,7 @@ title: 141 Pilot Skills live on ClawHub
 flagged: true
 links:
   - "https://clawhub.ai/teoslayer/pilot-protocol"
-  - "https://teoslayer.github.io/pilot-skills/"
+  - "https://pilot-protocol.github.io/pilot-skills/"
 ids: []
 ---
 

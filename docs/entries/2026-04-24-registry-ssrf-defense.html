@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Registry SSRF defense and snapshot validation — Pilot Protocol Changelog</title>
-  <link rel="canonical" href="https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html" />
+  <link rel="canonical" href="https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html" />
   <meta name="description" content="Hardened the registry HTTP surface against SSRF across the IDP-config, webhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted SSRF-bait URLs at face value; it now validates them. Snapshot restore was re-installing unvalidated URLs from disk on startup; restore now revalidates. The cloud-metadata hostname check was case-sensitive and could be bypassed with mixed case (`Metadata.google.internal`); now case-insensitive." />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Registry SSRF defense and snapshot validation — Pilot Protocol Changelog" />
   <meta property="og:description" content="Hardened the registry HTTP surface against SSRF across the IDP-config, webhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted SSRF-bait URLs at face value; it now validates them. Snapshot restore was re-installing unvalidated URLs from disk on startup; restore now revalidates. The cloud-metadata hostname check was case-sensitive and could be bypassed with mixed case (`Metadata.google.internal`); now case-insensitive." />
-  <meta property="og:url" content="https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html" />
+  <meta property="og:url" content="https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html" />
   <meta property="og:site_name" content="Pilot Protocol Changelog" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Registry SSRF defense and snapshot validation — Pilot Protocol Changelog" />
@@ -18,7 +18,7 @@
   <!-- Add google-site-verification meta here once Search Console is set up. -->
   <meta property="article:published_time" content="2026-04-24T00:00:00Z" />
   <meta property="article:section" content="protocol" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Registry SSRF defense and snapshot validation", "datePublished": "2026-04-24T00:00:00Z", "dateModified": "2026-04-24T00:00:00Z", "description": "Hardened the registry HTTP surface against SSRF across the IDP-config, webhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted SSRF-bait URLs at face value; it now validates them. Snapshot restore was re-installing unvalidated URLs from disk on startup; restore now revalidates. The cloud-metadata hostname check was case-sensitive and could be bypassed with mixed case (`Metadata.google.internal`); now case-insensitive.", "articleBody": "Hardened the registry HTTP surface against SSRF across the IDP-config,\nwebhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted\nSSRF-bait URLs at face value; it now validates them. Snapshot restore was\nre-installing unvalidated URLs from disk on startup; restore now revalidates.\nThe cloud-metadata hostname check was case-sensitive and could be bypassed\nwith mixed case (`Metadata.google.internal`); now case-insensitive.\n\nResource caps added on `lastRekeyReq`, `relayPeers`, and the unauth\ncrypto-map so flood traffic can't grow them unbounded. Stale tunnel packets\nare now classified separately from nonce replay (previously conflated in\nmetrics).", "url": "https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "protocol", "keywords": ["protocol", "pilot-protocol", "agent-network"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Registry SSRF defense and snapshot validation", "datePublished": "2026-04-24T00:00:00Z", "dateModified": "2026-04-24T00:00:00Z", "description": "Hardened the registry HTTP surface against SSRF across the IDP-config, webhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted SSRF-bait URLs at face value; it now validates them. Snapshot restore was re-installing unvalidated URLs from disk on startup; restore now revalidates. The cloud-metadata hostname check was case-sensitive and could be bypassed with mixed case (`Metadata.google.internal`); now case-insensitive.", "articleBody": "Hardened the registry HTTP surface against SSRF across the IDP-config,\nwebhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted\nSSRF-bait URLs at face value; it now validates them. Snapshot restore was\nre-installing unvalidated URLs from disk on startup; restore now revalidates.\nThe cloud-metadata hostname check was case-sensitive and could be bypassed\nwith mixed case (`Metadata.google.internal`); now case-insensitive.\n\nResource caps added on `lastRekeyReq`, `relayPeers`, and the unauth\ncrypto-map so flood traffic can't grow them unbounded. Stale tunnel packets\nare now classified separately from nonce replay (previously conflated in\nmetrics).", "url": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-registry-ssrf-defense.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "protocol", "keywords": ["protocol", "pilot-protocol", "agent-network"]}</script>
   <link rel="alternate" type="application/rss+xml" title="Pilot Protocol Changelog (RSS)" href="/pilot-changelog/feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +35,7 @@
         <div class="nav-links">
           <a class="nav-link" href="/pilot-changelog/">All entries</a>
           <a class="nav-link" href="https://pilotprotocol.network">Main site</a>
-          <a class="nav-link" href="https://github.com/TeoSlayer/pilot-changelog">GitHub</a>
+          <a class="nav-link" href="https://github.com/pilot-protocol/pilot-changelog">GitHub</a>
         </div>
         <div class="nav-right">
           <a class="bots-link" href="/pilot-changelog/feed.json" aria-label="Machine-readable feed for agents">
@@ -56,7 +56,7 @@
       </div>
       <h1>Registry SSRF defense and snapshot validation</h1>
       <div class="card-body"><p>Hardened the registry HTTP surface against SSRF across the IDP-config, webhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted SSRF-bait URLs at face value; it now validates them. Snapshot restore was re-installing unvalidated URLs from disk on startup; restore now revalidates. The cloud-metadata hostname check was case-sensitive and could be bypassed with mixed case (`Metadata.google.internal`); now case-insensitive.</p><p>Resource caps added on `lastRekeyReq`, `relayPeers`, and the unauth crypto-map so flood traffic can&#x27;t grow them unbounded. Stale tunnel packets are now classified separately from nonce replay (previously conflated in metrics).</p></div>
-      <div class="card-links"><a href="https://github.com/TeoSlayer/pilotprotocol/commit/d4ec11a" target="_blank" rel="noopener">https://github.com/TeoSlayer/pilotprotocol/commit/d4ec11a</a></div>
+      <div class="card-links"><a href="https://github.com/pilot-protocol/pilotprotocol/commit/d4ec11a" target="_blank" rel="noopener">https://github.com/pilot-protocol/pilotprotocol/commit/d4ec11a</a></div>
     </article>
 
     <nav class="entry-nav"><a class="entry-nav-link" href="/pilot-changelog/entries/2026-04-24-strict-fifo-task-pipeline.html" rel="prev">← Strict FIFO task pipeline and propagating trust revocation</a> · <a class="entry-nav-link" href="/pilot-changelog/">All entries</a> · <a class="entry-nav-link" href="/pilot-changelog/entries/2026-04-24-34-shipped-network-blueprints.html" rel="next">34 shipped network blueprints →</a></nav>
@@ -77,8 +77,8 @@
         </div>
         <div>
           <h4>Source</h4>
-          <a href="https://github.com/TeoSlayer/pilot-changelog">GitHub repo</a>
-          <a href="https://github.com/TeoSlayer/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog">GitHub repo</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
         </div>
         <div>
           <h4>Network</h4>

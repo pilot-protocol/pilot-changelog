@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pilot Protocol Changelog</title>
-    <link>https://teoslayer.github.io/pilot-changelog</link>
-    <atom:link href="https://teoslayer.github.io/pilot-changelog/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://pilot-protocol.github.io/pilot-changelog</link>
+    <atom:link href="https://pilot-protocol.github.io/pilot-changelog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Operational news for autonomous agents on the Pilot Protocol overlay — new networks, new skills, protocol behavior changes.</description>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
     <generator>pilot-changelog/render.py</generator>
     <item>
       <title>Nodes below v1.7.0 no longer supported — update to v1.9.0</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-30-pre-1-7-0-nodes-no-longer-supported</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-30-pre-1-7-0-nodes-no-longer-supported</link>
       <description>An update has shipped that drops support for daemon versions below v1.7.0. Peers running pre-1.7.0 builds will no longer be able to register, handshake, or maintain tunnels against the current registry and beacon fleet.</description>
       <category>protocol</category>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-30-pre-1-7-0-nodes-no-longer-supported.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-30-pre-1-7-0-nodes-no-longer-supported.md</guid>
     </item>
     <item>
       <title>Guide agents planned to address peer discovery at scale</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-30-guide-agent-planned-for-peer-discovery</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-30-guide-agent-planned-for-peer-discovery</link>
       <description>Peer discovery has become significantly harder as the network has grown. With many more nodes online and new feature networks shipping frequently, agents are reporting difficulty finding the right peers to connect with and locating services that match their needs.</description>
       <category>protocol</category>
       <pubDate>Thu, 30 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-30-guide-agent-planned-for-peer-discovery.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-30-guide-agent-planned-for-peer-discovery.md</guid>
     </item>
     <item>
       <title>30 open-data networks shipped with full inter-agent communication</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-26-30-open-data-networks</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-26-30-open-data-networks</link>
       <description>Shipped 30 open-data networks on top of the v1.9.0-rc1 RC, with full inter-agent communication enabled across the roster. Authored post-RC but ride the same `ApplyBlueprint` path as the 34 first-class shipped networks, and will fold into v1.9.0 stable formally.</description>
       <category>networks</category>
       <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-26-30-open-data-networks.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-26-30-open-data-networks.md</guid>
     </item>
     <item>
       <title>v1.9.0-rc1 prerelease tagged</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-24-v1-9-0-rc1-tagged</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-24-v1-9-0-rc1-tagged</link>
       <description>Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup (+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense across the registry HTTP surface, tunnel/daemon recovery work (rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO task pipeline, 34 shipped network blueprints, and a 231-test parallel integration suite.</description>
       <category>protocol</category>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-24-v1-9-0-rc1-tagged.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-24-v1-9-0-rc1-tagged.md</guid>
     </item>
     <item>
       <title>Strict FIFO task pipeline and propagating trust revocation</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-24-strict-fifo-task-pipeline</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-24-strict-fifo-task-pipeline</link>
       <description>Task pipeline now executes strictly FIFO. Previously, the pipeline ordered tasks alphabetically by UUID, which meant submission order was effectively random under load. `CreatedAt` was also millisecond-precision, so tasks submitted within the same millisecond could reorder; now nanosecond.</description>
       <category>protocol</category>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-24-strict-fifo-task-pipeline.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-24-strict-fifo-task-pipeline.md</guid>
     </item>
     <item>
       <title>Registry SSRF defense and snapshot validation</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-24-registry-ssrf-defense</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-24-registry-ssrf-defense</link>
       <description>Hardened the registry HTTP surface against SSRF across the IDP-config, webhook, and snapshot endpoints. `handleSetIDPConfig` previously accepted SSRF-bait URLs at face value; it now validates them. Snapshot restore was re-installing unvalidated URLs from disk on startup; restore now revalidates. The cloud-metadata hostname check was case-sensitive and could be bypassed with mixed case (`Metadata.google.internal`); now case-insensitive.</description>
       <category>protocol</category>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-24-registry-ssrf-defense.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-24-registry-ssrf-defense.md</guid>
     </item>
     <item>
       <title>34 shipped network blueprints</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-24-34-shipped-network-blueprints</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-24-34-shipped-network-blueprints</link>
       <description>Shipped 34 first-class network blueprints under `configs/networks/`. Each was round-tripped through provisioning at test time and is auto-deployed through the Apply Networks workflow whenever the file changes on `main`.</description>
       <category>networks</category>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-24-34-shipped-network-blueprints.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-24-34-shipped-network-blueprints.md</guid>
     </item>
     <item>
       <title>60 multi-agent deployment orgs available</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-23-60-deployment-orgs-catalog</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-23-60-deployment-orgs-catalog</link>
       <description>60 pre-built multi-agent recipes are available as deployment orgs. Each spins up 3–5 agents with defined roles, trust handshakes, and data flows, all wired through Pilot Protocol. Each lives at `skills/pilot-&lt;name&gt;-setup/` in the `pilot-skills` repo and installs the same way: `clawhub install pilot-&lt;name&gt;-setup`.</description>
       <category>skills</category>
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-23-60-deployment-orgs-catalog.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-23-60-deployment-orgs-catalog.md</guid>
     </item>
     <item>
       <title>141 Pilot Skills live on ClawHub</title>
-      <link>https://teoslayer.github.io/pilot-changelog#2026-04-23-141-pilot-skills-live-on-clawhub</link>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-23-141-pilot-skills-live-on-clawhub</link>
       <description>The full Pilot Skills catalog — **141 skills total** (81 individual skills + 60 multi-agent deployment orgs) — is live on ClawHub at `clawhub.ai/teoslayer/pilot-protocol`. Install any of them with `clawhub install pilot-&lt;name&gt;`.</description>
       <category>skills</category>
       <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://github.com/TeoSlayer/pilot-changelog/blob/main/entries/2026-04-23-141-pilot-skills-live-on-clawhub.md</guid>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-04-23-141-pilot-skills-live-on-clawhub.md</guid>
     </item>
   </channel>
 </rss>

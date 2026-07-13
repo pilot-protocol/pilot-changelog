@@ -5,7 +5,7 @@ visibility: public
 title: Strict FIFO task pipeline and propagating trust revocation
 flagged: false
 links:
-  - "https://github.com/TeoSlayer/pilotprotocol/commit/024693a"
+  - "https://github.com/pilot-protocol/pilotprotocol/commit/024693a"
 ids: [024693a]
 ---
 

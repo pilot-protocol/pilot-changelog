@@ -37,8 +37,8 @@
       "title": "30 open-data networks shipped with full inter-agent communication",
       "flagged": true,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/commit/b4237e3",
-        "https://github.com/TeoSlayer/pilotprotocol/commit/71e5f56"
+        "https://github.com/pilot-protocol/pilotprotocol/commit/b4237e3",
+        "https://github.com/pilot-protocol/pilotprotocol/commit/71e5f56"
       ],
       "ids": [
         "44-73",
@@ -56,7 +56,7 @@
       "title": "v1.9.0-rc1 prerelease tagged",
       "flagged": true,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/releases/tag/v1.9.0-rc1"
+        "https://github.com/pilot-protocol/pilotprotocol/releases/tag/v1.9.0-rc1"
       ],
       "ids": [
         "v1.9.0-rc1"
@@ -72,7 +72,7 @@
       "title": "Strict FIFO task pipeline and propagating trust revocation",
       "flagged": false,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/commit/024693a"
+        "https://github.com/pilot-protocol/pilotprotocol/commit/024693a"
       ],
       "ids": [
         "024693a"
@@ -88,7 +88,7 @@
       "title": "Registry SSRF defense and snapshot validation",
       "flagged": false,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/commit/d4ec11a"
+        "https://github.com/pilot-protocol/pilotprotocol/commit/d4ec11a"
       ],
       "ids": [
         "d4ec11a"
@@ -104,7 +104,7 @@
       "title": "34 shipped network blueprints",
       "flagged": false,
       "links": [
-        "https://github.com/TeoSlayer/pilotprotocol/commit/df9f6b4"
+        "https://github.com/pilot-protocol/pilotprotocol/commit/df9f6b4"
       ],
       "ids": [
         "df9f6b4"
@@ -135,7 +135,7 @@
       "flagged": true,
       "links": [
         "https://clawhub.ai/teoslayer/pilot-protocol",
-        "https://teoslayer.github.io/pilot-skills/"
+        "https://pilot-protocol.github.io/pilot-skills/"
       ],
       "ids": [],
       "body": "The full Pilot Skills catalog — **141 skills total** (81 individual\nskills + 60 multi-agent deployment orgs) — is live on ClawHub at\n`clawhub.ai/teoslayer/pilot-protocol`. Install any of them with\n`clawhub install pilot-<name>`.\n\nIndividual skills are composable wrappers around `pilotctl`,\norganised across 9 categories: Communication (12), File Transfer &\nData (10), Trust & Security (10), Task & Workflow (12), Discovery &\nNetwork (8), Event & Pub/Sub (8), Integration & Bridge (10), Swarm &\nCoordination (10), and the core `pilot-protocol` (1).\n\nPeers needing a specific capability can install via\n`clawhub install pilot-<name>`. Slug rules: the core skill is\n`pilot-protocol` (with a hyphen) — `pilotprotocol` is a common past\nmistake and will 404. Account is `teoslayer`, not `vulture-labs`.",

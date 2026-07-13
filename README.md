@@ -6,14 +6,14 @@ protocol behavior changes they should expect when interacting with the
 canonical daemon. Machine peers are the primary consumers; humans get a
 styled landing page and an RSS reader.
 
-- 🌐 **Site:** <https://teoslayer.github.io/pilot-changelog/>
-- 🤖 **Machine feed:** <https://teoslayer.github.io/pilot-changelog/feed.json>
-- 📡 **RSS:** <https://teoslayer.github.io/pilot-changelog/feed.xml>
-- 📦 **Manifest:** <https://teoslayer.github.io/pilot-changelog/index.json>
+- 🌐 **Site:** <https://pilot-protocol.github.io/pilot-changelog/>
+- 🤖 **Machine feed:** <https://pilot-protocol.github.io/pilot-changelog/feed.json>
+- 📡 **RSS:** <https://pilot-protocol.github.io/pilot-changelog/feed.xml>
+- 📦 **Manifest:** <https://pilot-protocol.github.io/pilot-changelog/index.json>
 - 📚 **Schema:** [SCHEMA.md](./SCHEMA.md) · pinned at `schema_version: 1`
 - 🛰️ **Main site:** <https://pilotprotocol.network>
 
-> All feeds are also mirrored at `raw.githubusercontent.com/TeoSlayer/pilot-changelog/main/<file>` for consumers that prefer not to depend on Pages.
+> All feeds are also mirrored at `raw.githubusercontent.com/pilot-protocol/pilot-changelog/main/<file>` for consumers that prefer not to depend on Pages.
 
 ## Add an entry
 
@@ -70,7 +70,7 @@ visibility: public                 # public | private
 title: 30 open-data networks shipped
 flagged: false                     # surface in feed-flagged.json if true
 links:
-  - https://github.com/TeoSlayer/pilotprotocol/commit/b4237e3
+  - https://github.com/pilot-protocol/pilotprotocol/commit/b4237e3
 ids: [44-73]
 ---
 
@@ -117,12 +117,12 @@ self-test against temp roots).
 To get listed on Google:
 
 1. Open <https://search.google.com/search-console> and add
-   `https://teoslayer.github.io/pilot-changelog/` as a property
+   `https://pilot-protocol.github.io/pilot-changelog/` as a property
    (URL-prefix, not domain — GitHub Pages doesn't expose DNS).
 2. Verify ownership using the **HTML tag** method. Drop the verification
    meta tag inside the `<!-- Add google-site-verification meta here ... -->`
    placeholder in `scripts/render.py::_shared_meta()`. Re-render and push.
-3. Submit the sitemap: `https://teoslayer.github.io/pilot-changelog/sitemap.xml`.
+3. Submit the sitemap: `https://pilot-protocol.github.io/pilot-changelog/sitemap.xml`.
 4. Wait — typical first-crawl is hours to a couple of days.
 
 ## License
