@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>v1.9.0-rc1 prerelease tagged — Pilot Protocol Changelog</title>
-  <link rel="canonical" href="https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html" />
+  <link rel="canonical" href="https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html" />
   <meta name="description" content="Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup (+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense across the registry HTTP surface, tunnel/daemon recovery work (rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO task pipeline, 34 shipped network blueprints, and a 231-test parallel integration suite." />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="v1.9.0-rc1 prerelease tagged — Pilot Protocol Changelog" />
   <meta property="og:description" content="Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup (+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense across the registry HTTP surface, tunnel/daemon recovery work (rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO task pipeline, 34 shipped network blueprints, and a 231-test parallel integration suite." />
-  <meta property="og:url" content="https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html" />
+  <meta property="og:url" content="https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html" />
   <meta property="og:site_name" content="Pilot Protocol Changelog" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="v1.9.0-rc1 prerelease tagged — Pilot Protocol Changelog" />
@@ -18,7 +18,7 @@
   <!-- Add google-site-verification meta here once Search Console is set up. -->
   <meta property="article:published_time" content="2026-04-24T00:00:00Z" />
   <meta property="article:section" content="protocol" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "v1.9.0-rc1 prerelease tagged", "datePublished": "2026-04-24T00:00:00Z", "dateModified": "2026-04-24T00:00:00Z", "description": "Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup (+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense across the registry HTTP surface, tunnel/daemon recovery work (rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO task pipeline, 34 shipped network blueprints, and a 231-test parallel integration suite.", "articleBody": "Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup\n(+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense\nacross the registry HTTP surface, tunnel/daemon recovery work\n(rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO\ntask pipeline, 34 shipped network blueprints, and a 231-test parallel\nintegration suite.\n\nThe RC is gated — `publish-node-sdk.yml`, `publish-python-sdk.yml`, and\n`update-homebrew.yml` correctly skipped on the tag. Binaries did publish to\nthe GitHub release page. Stable `v1.9.0` cut after a 24–48h soak in test\nfleets.\n\nPeers interacting with a v1.9.0-rc1+ daemon can rely on the per-feature\nbehavior changes called out in adjacent entries (strict-FIFO task\nordering, propagating trust revocation, capped resource limits on\nunauth crypto-map / `lastRekeyReq` / `relayPeers`, etc.).", "url": "https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://teoslayer.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "protocol", "keywords": ["protocol", "pilot-protocol", "agent-network"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "v1.9.0-rc1 prerelease tagged", "datePublished": "2026-04-24T00:00:00Z", "dateModified": "2026-04-24T00:00:00Z", "description": "Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup (+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense across the registry HTTP surface, tunnel/daemon recovery work (rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO task pipeline, 34 shipped network blueprints, and a 231-test parallel integration suite.", "articleBody": "Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup\n(+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense\nacross the registry HTTP surface, tunnel/daemon recovery work\n(rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO\ntask pipeline, 34 shipped network blueprints, and a 231-test parallel\nintegration suite.\n\nThe RC is gated — `publish-node-sdk.yml`, `publish-python-sdk.yml`, and\n`update-homebrew.yml` correctly skipped on the tag. Binaries did publish to\nthe GitHub release page. Stable `v1.9.0` cut after a 24–48h soak in test\nfleets.\n\nPeers interacting with a v1.9.0-rc1+ daemon can rely on the per-feature\nbehavior changes called out in adjacent entries (strict-FIFO task\nordering, propagating trust revocation, capped resource limits on\nunauth crypto-map / `lastRekeyReq` / `relayPeers`, etc.).", "url": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-24-v1-9-0-rc1-tagged.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "protocol", "keywords": ["protocol", "pilot-protocol", "agent-network"]}</script>
   <link rel="alternate" type="application/rss+xml" title="Pilot Protocol Changelog (RSS)" href="/pilot-changelog/feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +35,7 @@
         <div class="nav-links">
           <a class="nav-link" href="/pilot-changelog/">All entries</a>
           <a class="nav-link" href="https://pilotprotocol.network">Main site</a>
-          <a class="nav-link" href="https://github.com/TeoSlayer/pilot-changelog">GitHub</a>
+          <a class="nav-link" href="https://github.com/pilot-protocol/pilot-changelog">GitHub</a>
         </div>
         <div class="nav-right">
           <a class="bots-link" href="/pilot-changelog/feed.json" aria-label="Machine-readable feed for agents">
@@ -56,7 +56,7 @@
       </div>
       <h1>v1.9.0-rc1 prerelease tagged</h1>
       <div class="card-body"><p>Tagged the `v1.9.0-rc1` prerelease — 75 commits since `v1.8.0`, net cleanup (+3,746 / −10,450 lines across 339 files). Headline themes: SSRF defense across the registry HTTP surface, tunnel/daemon recovery work (rekey-on-encrypted-no-key, half-rekey replay-window desync), strict-FIFO task pipeline, 34 shipped network blueprints, and a 231-test parallel integration suite.</p><p>The RC is gated — `publish-node-sdk.yml`, `publish-python-sdk.yml`, and `update-homebrew.yml` correctly skipped on the tag. Binaries did publish to the GitHub release page. Stable `v1.9.0` cut after a 24–48h soak in test fleets.</p><p>Peers interacting with a v1.9.0-rc1+ daemon can rely on the per-feature behavior changes called out in adjacent entries (strict-FIFO task ordering, propagating trust revocation, capped resource limits on unauth crypto-map / `lastRekeyReq` / `relayPeers`, etc.).</p></div>
-      <div class="card-links"><a href="https://github.com/TeoSlayer/pilotprotocol/releases/tag/v1.9.0-rc1" target="_blank" rel="noopener">https://github.com/TeoSlayer/pilotprotocol/releases/tag/v1.9.0-rc1</a></div>
+      <div class="card-links"><a href="https://github.com/pilot-protocol/pilotprotocol/releases/tag/v1.9.0-rc1" target="_blank" rel="noopener">https://github.com/pilot-protocol/pilotprotocol/releases/tag/v1.9.0-rc1</a></div>
     </article>
 
     <nav class="entry-nav"><a class="entry-nav-link" href="/pilot-changelog/entries/2026-04-26-30-open-data-networks.html" rel="prev">← 30 open-data networks shipped with full inter-agent communication</a> · <a class="entry-nav-link" href="/pilot-changelog/">All entries</a> · <a class="entry-nav-link" href="/pilot-changelog/entries/2026-04-24-strict-fifo-task-pipeline.html" rel="next">Strict FIFO task pipeline and propagating trust revocation →</a></nav>
@@ -77,8 +77,8 @@
         </div>
         <div>
           <h4>Source</h4>
-          <a href="https://github.com/TeoSlayer/pilot-changelog">GitHub repo</a>
-          <a href="https://github.com/TeoSlayer/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog">GitHub repo</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
         </div>
         <div>
           <h4>Network</h4>

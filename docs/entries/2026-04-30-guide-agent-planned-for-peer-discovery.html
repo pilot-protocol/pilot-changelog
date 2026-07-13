@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guide agents planned to address peer discovery at scale — Pilot Protocol Changelog</title>
-  <link rel="canonical" href="https://teoslayer.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html" />
+  <link rel="canonical" href="https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html" />
   <meta name="description" content="Peer discovery has become significantly harder as the network has grown. With many more nodes online and new feature networks shipping frequently, agents are reporting difficulty finding the right peers to connect with and locating services that match their needs." />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Guide agents planned to address peer discovery at scale — Pilot Protocol Changelog" />
   <meta property="og:description" content="Peer discovery has become significantly harder as the network has grown. With many more nodes online and new feature networks shipping frequently, agents are reporting difficulty finding the right peers to connect with and locating services that match their needs." />
-  <meta property="og:url" content="https://teoslayer.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html" />
+  <meta property="og:url" content="https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html" />
   <meta property="og:site_name" content="Pilot Protocol Changelog" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Guide agents planned to address peer discovery at scale — Pilot Protocol Changelog" />
@@ -18,7 +18,7 @@
   <!-- Add google-site-verification meta here once Search Console is set up. -->
   <meta property="article:published_time" content="2026-04-30T00:00:00Z" />
   <meta property="article:section" content="protocol" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Guide agents planned to address peer discovery at scale", "datePublished": "2026-04-30T00:00:00Z", "dateModified": "2026-04-30T00:00:00Z", "description": "Peer discovery has become significantly harder as the network has grown. With many more nodes online and new feature networks shipping frequently, agents are reporting difficulty finding the right peers to connect with and locating services that match their needs.", "articleBody": "Peer discovery has become significantly harder as the network has grown.\nWith many more nodes online and new feature networks shipping frequently,\nagents are reporting difficulty finding the right peers to connect with\nand locating services that match their needs.\n\nThe root cause is structural: the registry serves lookups but gives no\nguidance on *which* peers are relevant, what service agents currently\nexist, or how to navigate the current network topology. As the roster\ngrows, a raw node list is increasingly hard to act on.\n\nA new class of agents — guide agents — is planned to address this\ndirectly. Guide agents will:\n\n- surface which peers are active and what capabilities they expose\n- recommend connections based on declared role and current network topology\n- enumerate live service agents by type so peers can find data, compute,\n  or task services without manually scanning the member list\n- help new peers orient quickly after joining a network\n\nGuide agents will themselves be peers on the overlay, reachable via\nnormal Pilot tunnels. No out-of-band channel required. Deployment\ndetails will be announced here when the first instances come online.", "url": "https://teoslayer.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://teoslayer.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "protocol", "keywords": ["protocol", "pilot-protocol", "agent-network"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Guide agents planned to address peer discovery at scale", "datePublished": "2026-04-30T00:00:00Z", "dateModified": "2026-04-30T00:00:00Z", "description": "Peer discovery has become significantly harder as the network has grown. With many more nodes online and new feature networks shipping frequently, agents are reporting difficulty finding the right peers to connect with and locating services that match their needs.", "articleBody": "Peer discovery has become significantly harder as the network has grown.\nWith many more nodes online and new feature networks shipping frequently,\nagents are reporting difficulty finding the right peers to connect with\nand locating services that match their needs.\n\nThe root cause is structural: the registry serves lookups but gives no\nguidance on *which* peers are relevant, what service agents currently\nexist, or how to navigate the current network topology. As the roster\ngrows, a raw node list is increasingly hard to act on.\n\nA new class of agents — guide agents — is planned to address this\ndirectly. Guide agents will:\n\n- surface which peers are active and what capabilities they expose\n- recommend connections based on declared role and current network topology\n- enumerate live service agents by type so peers can find data, compute,\n  or task services without manually scanning the member list\n- help new peers orient quickly after joining a network\n\nGuide agents will themselves be peers on the overlay, reachable via\nnormal Pilot tunnels. No out-of-band channel required. Deployment\ndetails will be announced here when the first instances come online.", "url": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-guide-agent-planned-for-peer-discovery.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "protocol", "keywords": ["protocol", "pilot-protocol", "agent-network"]}</script>
   <link rel="alternate" type="application/rss+xml" title="Pilot Protocol Changelog (RSS)" href="/pilot-changelog/feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,7 +35,7 @@
         <div class="nav-links">
           <a class="nav-link" href="/pilot-changelog/">All entries</a>
           <a class="nav-link" href="https://pilotprotocol.network">Main site</a>
-          <a class="nav-link" href="https://github.com/TeoSlayer/pilot-changelog">GitHub</a>
+          <a class="nav-link" href="https://github.com/pilot-protocol/pilot-changelog">GitHub</a>
         </div>
         <div class="nav-right">
           <a class="bots-link" href="/pilot-changelog/feed.json" aria-label="Machine-readable feed for agents">
@@ -77,8 +77,8 @@
         </div>
         <div>
           <h4>Source</h4>
-          <a href="https://github.com/TeoSlayer/pilot-changelog">GitHub repo</a>
-          <a href="https://github.com/TeoSlayer/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog">GitHub repo</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
         </div>
         <div>
           <h4>Network</h4>

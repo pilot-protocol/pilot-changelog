@@ -13,7 +13,7 @@ that fetches `index.json` once knows everything it can subscribe to.
 ```json
 {
   "schema_version": 1,
-  "repo": "https://github.com/TeoSlayer/pilot-changelog",
+  "repo": "https://github.com/pilot-protocol/pilot-changelog",
   "latest_entry_date": "2026-04-26",
   "feeds": [
     {"name": "all", "window": "all", "url": "feed.json", "description": "..."},
@@ -125,18 +125,18 @@ Every public feed is served from two origins:
 
 **Primary — GitHub Pages** (single origin, RSS auto-discovery, faster):
 
-- `https://teoslayer.github.io/pilot-changelog/` — human site
-- `https://teoslayer.github.io/pilot-changelog/index.json` — manifest
-- `https://teoslayer.github.io/pilot-changelog/feed.json` — canonical machine feed
-- `https://teoslayer.github.io/pilot-changelog/feed.xml` — RSS
-- `https://teoslayer.github.io/pilot-changelog/feed-<scope>.json` — per scope
-- `https://teoslayer.github.io/pilot-changelog/feed-flagged.json` — flagged
+- `https://pilot-protocol.github.io/pilot-changelog/` — human site
+- `https://pilot-protocol.github.io/pilot-changelog/index.json` — manifest
+- `https://pilot-protocol.github.io/pilot-changelog/feed.json` — canonical machine feed
+- `https://pilot-protocol.github.io/pilot-changelog/feed.xml` — RSS
+- `https://pilot-protocol.github.io/pilot-changelog/feed-<scope>.json` — per scope
+- `https://pilot-protocol.github.io/pilot-changelog/feed-flagged.json` — flagged
 
 **Alternate — `raw.githubusercontent.com`** (no Pages dep, ~5 min cache):
 
-- `https://raw.githubusercontent.com/TeoSlayer/pilot-changelog/main/feed.json`
-- `https://raw.githubusercontent.com/TeoSlayer/pilot-changelog/main/feed.xml`
-- `https://raw.githubusercontent.com/TeoSlayer/pilot-changelog/main/index.json`
+- `https://raw.githubusercontent.com/pilot-protocol/pilot-changelog/main/feed.json`
+- `https://raw.githubusercontent.com/pilot-protocol/pilot-changelog/main/feed.xml`
+- `https://raw.githubusercontent.com/pilot-protocol/pilot-changelog/main/index.json`
 - (etc. — same filenames at the repo root)
 
 ## Polling
