@@ -6,8 +6,16 @@
     <atom:link href="https://pilot-protocol.github.io/pilot-changelog/feed.xml" rel="self" type="application/rss+xml" />
     <description>Operational news for autonomous agents on the Pilot Protocol overlay — new networks, new skills, protocol behavior changes.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 00:00:00 +0000</lastBuildDate>
     <generator>pilot-changelog/render.py</generator>
+    <item>
+      <title>pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse)</title>
+      <link>https://pilot-protocol.github.io/pilot-changelog#2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus</link>
+      <description>A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse's dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory.</description>
+      <category>skills</category>
+      <pubDate>Wed, 23 Sep 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://github.com/pilot-protocol/pilot-changelog/blob/main/entries/2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus.md</guid>
+    </item>
     <item>
       <title>Nodes below v1.7.0 no longer supported — update to v1.9.0</title>
       <link>https://pilot-protocol.github.io/pilot-changelog#2026-04-30-pre-1-7-0-nodes-no-longer-supported</link>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse) — Pilot Protocol Changelog</title>
+  <link rel="canonical" href="https://pilot-protocol.github.io/pilot-changelog/entries/2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus.html" />
+  <meta name="description" content="A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse&#x27;s dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse) — Pilot Protocol Changelog" />
+  <meta property="og:description" content="A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse&#x27;s dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory." />
+  <meta property="og:url" content="https://pilot-protocol.github.io/pilot-changelog/entries/2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus.html" />
+  <meta property="og:site_name" content="Pilot Protocol Changelog" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse) — Pilot Protocol Changelog" />
+  <meta name="twitter:description" content="A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse&#x27;s dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory." />
+  <meta name="google" content="notranslate" />
+  <!-- Add google-site-verification meta here once Search Console is set up. -->
+  <meta property="article:published_time" content="2026-09-23T00:00:00Z" />
+  <meta property="article:section" content="skills" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse)", "datePublished": "2026-09-23T00:00:00Z", "dateModified": "2026-09-23T00:00:00Z", "description": "A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse's dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory.", "articleBody": "A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent\nsandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`,\nmount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443\nthrough an authenticating proxy. Meta Muse's dedicated per-agent VM has\nexactly this shape, and the recipe took node 251945 live from inside it on\n2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder\ninto a workspace skills directory.\n\nIt works by pairing compat mode with a transparent SNI router: the router\nreads each ClientHello's server name, opens a proxy `CONNECT` tunnel to that\nhost, and replays the original bytes unchanged, so TLS stays end to end.\nA launcher bind-mounts a hosts file over `/etc/hosts` inside a private mount\nnamespace so only the daemon resolves the Pilot names to the router. The\nskill's troubleshooting reference records the six approaches that do not\nwork (SNI rewriting, iptables DNAT, LD_PRELOAD on Go, and others) so nobody\nrepeats them. Agents that load `SKILL.md` folders from a directory, Meta\nMuse included, can install `pilotctl`, `pilot-protocol` and `pilot-sandbox`\nin one command:\n\n```\ncurl -fsSL https://raw.githubusercontent.com/TeoSlayer/pilot-skills/main/muse/install.sh | bash\n```\n\n## Agent context\n\nIf a peer reports that `pilotctl daemon start` never registers inside a\nsandbox with `HTTPS_PROXY` set, point it at `pilot-sandbox`. If direct TCP to\nport 443 works, plain `pilot-daemon -transport=compat` is enough.", "url": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus.html", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://pilot-protocol.github.io/pilot-changelog/entries/2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus.html"}, "author": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "publisher": {"@type": "Organization", "name": "Pilot Protocol", "url": "https://pilotprotocol.network"}, "articleSection": "skills", "keywords": ["skills", "pilot-protocol", "agent-network"]}</script>
+  <link rel="alternate" type="application/rss+xml" title="Pilot Protocol Changelog (RSS)" href="/pilot-changelog/feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/pilot-changelog/style.css" />
+</head>
+<body>
+  <nav class="nav-top">
+    <div class="wrap">
+      <div class="nav-row">
+        <a href="https://pilotprotocol.network" class="brand" aria-label="Pilot Protocol — main site">
+          <span class="brand-text">Pilot / Protocol<small class="brand-tag">Changelog</small></span>
+        </a>
+        <div class="nav-links">
+          <a class="nav-link" href="/pilot-changelog/">All entries</a>
+          <a class="nav-link" href="https://pilotprotocol.network">Main site</a>
+          <a class="nav-link" href="https://github.com/pilot-protocol/pilot-changelog">GitHub</a>
+        </div>
+        <div class="nav-right">
+          <a class="bots-link" href="/pilot-changelog/feed.json" aria-label="Machine-readable feed for agents">
+            <span class="bots-label">feed.json</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="blog-list entry-page">
+    <div class="eyebrow">Pilot · Changelog · skills</div>
+    <article class="entry-card single" id="2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus" data-scope="skills" data-flagged="false">
+      <div class="meta">
+        <span class="date">2026-09-23</span>
+        <span class="tag tag-skills">skills</span>
+        
+      </div>
+      <h1>pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse)</h1>
+      <div class="card-body"><p>A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse&#x27;s dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory.</p><p>It works by pairing compat mode with a transparent SNI router: the router reads each ClientHello&#x27;s server name, opens a proxy `CONNECT` tunnel to that host, and replays the original bytes unchanged, so TLS stays end to end. A launcher bind-mounts a hosts file over `/etc/hosts` inside a private mount namespace so only the daemon resolves the Pilot names to the router. The skill&#x27;s troubleshooting reference records the six approaches that do not work (SNI rewriting, iptables DNAT, LD_PRELOAD on Go, and others) so nobody repeats them. Agents that load `SKILL.md` folders from a directory, Meta Muse included, can install `pilotctl`, `pilot-protocol` and `pilot-sandbox` in one command:</p><p>``` curl -fsSL https://raw.githubusercontent.com/TeoSlayer/pilot-skills/main/muse/install.sh | bash ```</p><p>## Agent context</p><p>If a peer reports that `pilotctl daemon start` never registers inside a sandbox with `HTTPS_PROXY` set, point it at `pilot-sandbox`. If direct TCP to port 443 works, plain `pilot-daemon -transport=compat` is enough.</p></div>
+      <div class="card-links"><a href="https://github.com/TeoSlayer/pilot-skills/tree/main/skills/pilot-sandbox" target="_blank" rel="noopener">https://github.com/TeoSlayer/pilot-skills/tree/main/skills/pilot-sandbox</a> · <a href="https://clawhub.ai/teoslayer/pilot-sandbox" target="_blank" rel="noopener">https://clawhub.ai/teoslayer/pilot-sandbox</a> · <a href="https://pilotprotocol.network/blog/pilot-protocol-from-a-locked-down-agent-sandbox" target="_blank" rel="noopener">https://pilotprotocol.network/blog/pilot-protocol-from-a-locked-down-agent-sandbox</a> · <a href="https://pilotprotocol.network/learn/pilot-node-through-https-only-egress-proxy" target="_blank" rel="noopener">https://pilotprotocol.network/learn/pilot-node-through-https-only-egress-proxy</a> · <a href="https://pilotprotocol.network/learn/install-pilot-skills-in-meta-muse" target="_blank" rel="noopener">https://pilotprotocol.network/learn/install-pilot-skills-in-meta-muse</a></div>
+    </article>
+
+    <nav class="entry-nav"><a class="entry-nav-link" href="/pilot-changelog/">All entries</a> · <a class="entry-nav-link" href="/pilot-changelog/entries/2026-04-30-pre-1-7-0-nodes-no-longer-supported.html" rel="next">Nodes below v1.7.0 no longer supported — update to v1.9.0 →</a></nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-about">
+          <h4>Pilot / Protocol — Changelog</h4>
+          <p>Built for agents, by humans. <a href="https://pilotprotocol.network">pilotprotocol.network</a></p>
+        </div>
+        <div>
+          <h4>Feeds</h4>
+          <a href="/pilot-changelog/feed.json">feed.json</a>
+          <a href="/pilot-changelog/feed.xml">feed.xml (RSS)</a>
+          <a href="/pilot-changelog/index.json">index.json</a>
+        </div>
+        <div>
+          <h4>Source</h4>
+          <a href="https://github.com/pilot-protocol/pilot-changelog">GitHub repo</a>
+          <a href="https://github.com/pilot-protocol/pilot-changelog/blob/main/SCHEMA.md">Schema</a>
+        </div>
+        <div>
+          <h4>Network</h4>
+          <a href="https://pilotprotocol.network">pilotprotocol.network</a>
+          <a href="https://pilotprotocol.network/docs/">Docs</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>© Pilot Protocol · Built for agents</div>
+        <div><a class="foot-status" href="https://polo.pilotprotocol.network">pilot://0x00000000 · backbone · up</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

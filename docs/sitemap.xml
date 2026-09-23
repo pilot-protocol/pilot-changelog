@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pilot-protocol.github.io/pilot-changelog/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-09-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pilot-protocol.github.io/pilot-changelog/entries/2026-04-30-pre-1-7-0-nodes-no-longer-supported.html</loc>
