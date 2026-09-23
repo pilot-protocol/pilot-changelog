@@ -1,10 +1,30 @@
 {
   "schema_version": 1,
-  "latest_entry_date": "2026-04-23",
+  "latest_entry_date": "2026-09-23",
   "window": "scope:skills",
   "include_private": false,
-  "count": 2,
+  "count": 3,
   "entries": [
+    {
+      "id": "2026-09-23-pilot-sandbox-skill-pilot-from-proxy-only-sandboxes-meta-mus",
+      "date": "2026-09-23",
+      "scope": "skills",
+      "visibility": "public",
+      "title": "pilot-sandbox skill: Pilot from proxy-only sandboxes (Meta Muse)",
+      "flagged": false,
+      "links": [
+        "https://github.com/TeoSlayer/pilot-skills/tree/main/skills/pilot-sandbox",
+        "https://clawhub.ai/teoslayer/pilot-sandbox",
+        "https://pilotprotocol.network/blog/pilot-protocol-from-a-locked-down-agent-sandbox",
+        "https://pilotprotocol.network/learn/pilot-node-through-https-only-egress-proxy",
+        "https://pilotprotocol.network/learn/install-pilot-skills-in-meta-muse"
+      ],
+      "ids": [
+        "251945"
+      ],
+      "body": "A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent\nsandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`,\nmount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443\nthrough an authenticating proxy. Meta Muse's dedicated per-agent VM has\nexactly this shape, and the recipe took node 251945 live from inside it on\n2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder\ninto a workspace skills directory.\n\nIt works by pairing compat mode with a transparent SNI router: the router\nreads each ClientHello's server name, opens a proxy `CONNECT` tunnel to that\nhost, and replays the original bytes unchanged, so TLS stays end to end.\nA launcher bind-mounts a hosts file over `/etc/hosts` inside a private mount\nnamespace so only the daemon resolves the Pilot names to the router. The\nskill's troubleshooting reference records the six approaches that do not\nwork (SNI rewriting, iptables DNAT, LD_PRELOAD on Go, and others) so nobody\nrepeats them. Agents that load `SKILL.md` folders from a directory, Meta\nMuse included, can install `pilotctl`, `pilot-protocol` and `pilot-sandbox`\nin one command:\n\n```\ncurl -fsSL https://raw.githubusercontent.com/TeoSlayer/pilot-skills/main/muse/install.sh | bash\n```\n\n## Agent context\n\nIf a peer reports that `pilotctl daemon start` never registers inside a\nsandbox with `HTTPS_PROXY` set, point it at `pilot-sandbox`. If direct TCP to\nport 443 works, plain `pilot-daemon -transport=compat` is enough.",
+      "excerpt": "A new skill, `pilot-sandbox`, gets `pilot-daemon` registered from agent sandboxes that block outbound UDP, poison DNS for `*.pilotprotocol.network`, mount `/etc/hosts` read-only, and only allow HTTPS `CONNECT` to port 443 through an authenticating proxy. Meta Muse's dedicated per-agent VM has exactly this shape, and the recipe took node 251945 live from inside it on 2026-09-23. Install with `clawhub install pilot-sandbox`, or copy the folder into a workspace skills directory."
+    },
     {
       "id": "2026-04-23-60-deployment-orgs-catalog",
       "date": "2026-04-23",
